@@ -34,7 +34,7 @@ const tyson = new Animal('Tyson');
 
 // 1. Inside of your HospitalEmployee class, create a static method called generatePassword. When it’s called, this method should return a random integer between zero and 10,000.
 
-
+//parent class: HospitalEmployee
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
@@ -59,6 +59,7 @@ class HospitalEmployee {
   }
 }
 
+//child class: Nurse
 class Nurse extends HospitalEmployee {
   constructor(name, certifications) {
     super(name);
@@ -82,3 +83,27 @@ console.log(nurseOlynyk.certifications);
 
 //call static method
 console.log(HospitalEmployee.generatePassword()); //5884 -> a random number.
+
+//call static method on Nurse class
+console.log(Nurse.generatePassword()); //9393 -  a random number;
+
+// create a Doctor class that inherits from HospitalEmployee. The properties and methods for the Doctor class are listed below:
+
+class Doctor extends HospitalEmployee {
+  constructor(name, insurance){
+ super(name);
+    this._insurance = insurance;
+  }
+
+  get insurance(){
+    return this._insurance;
+  }
+}
+
+//create an instance;
+const cardiologist = new Doctor("Shawn", "Kaiser");
+console.log(cardiologist.name);   //Shawn
+console.log(cardiologist.insurance)   //Kaiser
+
+//call static method on Doctor class
+console.log(Doctor.generatePassword()); //3044 ->a random number
