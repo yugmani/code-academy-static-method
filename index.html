@@ -1,1 +1,47 @@
-<div id="app"></div>
+<div id="app">
+  <h1>Classes: Static Methods</h1>
+  <ul>
+    <li>
+      Sometimes you will want a class to have methods that aren’t available in
+      individual instances, but that you can call directly from the class.
+    </li>
+    <li>
+      The <code><mark>static</mark></code> keyword is used to create a static
+      method in the parent class.
+    </li>
+    <li>
+      Syntax:<code>
+        <pre>
+class ClassName {
+  constructor(){
+    //...
+  }<br />
+  static functionName(){<br />
+    // ...<br />
+  }
+}
+</pre>
+      </code>
+    </li>
+    <li>
+      We call it(static method) directly from the class, but not from an
+      instance of the class.
+      <code>
+        <pre>
+console.log((parentClass.methodName()));
+  </pre
+        >
+      </code>
+    </li>
+    <li>
+      You cannot access the static method from instances of the parent class or
+      instances of its child classes (See below).
+      <code>
+        <pre>
+const myInstance = new parentClass("argument");<br />
+myInstance.staticMethod();  //TypeError;
+    </pre>
+      </code>
+    </li>
+  </ul>
+</div>
